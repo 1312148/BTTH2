@@ -1,0 +1,20 @@
+<h1><%= title %><h1>
+<form id='friend' name ='friendform' action="/listfriend" method= "post" >
+<select name="friendlist">
+	<% for(var i=0 ; i < accts.length ; i++) {%>
+		<option><%= accts[i].user %></option>
+	<%}%>
+</select>
+<div>
+	<input type="submit" id="friend-submit" value="Add">
+</div>
+</form>
+<script>
+	var friend = document.friendform.friendlist.value;
+	if( friend == "" ){
+	document.form.friendlist.focus() ;
+	document.getElementById("errorBox").innerHTML = "enter the last name";
+	return false;
+}
+</script>
+
